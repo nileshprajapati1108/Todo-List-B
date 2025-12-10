@@ -1,0 +1,85 @@
+/* =========================
+NAVBAR MAIN (IMPORTANT)
+========================= */
+.navbar {
+  width: 100%;                 /* ✅ VERY IMPORTANT */
+  height: 64px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 32px;
+  background: linear-gradient(135deg, #3b5bdb, #4c1d95);
+  box-sizing: border-box;
+
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* =========================
+   LOGO
+========================= */
+.logo {
+  font-size: 26px;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 1.5px;
+  text-shadow: 0 0 8px rgba(255,255,255,0.4);
+  margin-top:35px;
+}
+
+/* =========================
+   NAV LINKS (RIGHT SIDE)
+========================= */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 35px;
+
+  list-style: none;
+  margin: 0;                  /* ✅ RESET DEFAULT UL */
+  padding: 0;
+}
+
+/* =========================
+   LINKS
+========================= */
+.nav-links li a {
+  color: #f5f3ff;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 500;
+
+  padding: 8px 16px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+/* =========================
+   HOVER
+========================= */
+.nav-links li a:hover {
+  background: rgba(255,255,255,0.25);
+  transform: translateY(-2px);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 0 20px;
+  }
+
+  .logo {
+    font-size: 22px;
+  }
+
+  .nav-links {
+    gap: 20px;
+  }
+
+  .nav-links li a {
+    font-size: 16px;
+  }
+}
