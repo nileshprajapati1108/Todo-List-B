@@ -5,6 +5,9 @@ import { ObjectId } from "mongodb";
 import jwt, { decode } from "jsonwebtoken";
 import cookieParser from "cookie-parser";
 import bcrypt from 'bcrypt';
+import dotenv from "dotenv";
+
+dotenv.config();
 
 const app = express();
 
