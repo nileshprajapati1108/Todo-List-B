@@ -14,7 +14,7 @@ const app = express();
 // Middlewares
 app.use(express.json());
 app.use(cors({
-  origin:"http://localhost:5173",
+  origin: process.env.FRONTEND_URL,
   credentials:true
 }));
 app.use(cookieParser());
@@ -89,7 +89,7 @@ app.post("/login", async (req, res) => {
     }
 
     // Password matched → generate token
-    jwt.sign({ email }, 'Google', { expiresIn: '5d' }, (err, token) => {
+      jwt.sign({ email }, process.env.JWT_SECRET, { expiresIn: '5d' }, (err, token) => {
       if (err) return res.send({ success: false, message: "Login failed" });
 
       res.send({
@@ -208,7 +208,7 @@ function verifyJWTToken(req, res, next) {
     });
   }
 
-  jwt.verify(token, "Google", (error, decoded) => {
+  jwt.verify(token,  process.env.JWT_SECRET, (error, decoded) => {
     if (error) {
       return res.status(401).json({
         success: false,
